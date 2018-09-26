@@ -13,7 +13,7 @@ function init() {
 var colors = [0xDE5006, 0x42447, 0xC0A468, 0xF38D58, 0x615173];
 
 var Theme = {
-  //_dark:0xFFFFFF,
+  // _dark:0xFFFFFF,
   _black:0x101010,
   _dark:0x0F0F0F,   // Background
 //   _cont:0xFFD3D3,   // Lines
@@ -78,13 +78,13 @@ function createLights() {
 boatElement = function() {
 //   var boatGeo = new THREE.CubeGeometry();
 //   var boatMat = new THREE.MeshStandardMaterial({color:Theme._blue});
-//   this.boat = new THREE.Object3D();
+   this.boatA = new THREE.Object3D();
 //   this.boat = new THREE.Mesh(boatGeo, boatMat);
   var boatGeo = new THREE.IcosahedronGeometry();
   var boatMat = new THREE.MeshPhongMaterial( { 
       color: Theme._cyan, 
       wireframe: true, 
-      wireframeLinewidth: 50 } 
+      wireframeLinewidth: 3 } 
   );
 
   this.boat = new THREE.Mesh( boatGeo, boatMat );
@@ -92,7 +92,7 @@ boatElement = function() {
   this.boat.vel = 1+Math.random()*4;
   this.boat.amp = 1+Math.random()*6;
   this.boat.pos = Math.random()*.2;
-  this.boat.add(this.boat);
+  this.boatA.add(this.boat);
 }
 boatElement.prototype.movePosition = function(moveValue = 1) {
   this.boat.position.x = -Math.random() * moveValue + Math.random() * moveValue;
@@ -120,7 +120,7 @@ oceanElement = function(wirefr = true, geo_frag = 25) {
   var geo_size = 25;
   var geo = new THREE.PlaneGeometry(geo_size,geo_size,geo_frag,geo_frag);
   geo.mergeVertices();
-  this.mesh = new THREE.Object3D();
+  this.meshA = new THREE.Object3D();
   var l = geo.vertices.length;
   this.waves = [];
   //---
@@ -140,7 +140,7 @@ oceanElement = function(wirefr = true, geo_frag = 25) {
   this.wire = new THREE.Mesh(geo, wmat);
   this.mesh = new THREE.Mesh(geo, mat);
   if (wirefr) this.mesh.add(this.wire);
-  this.mesh.add(this.mesh);
+  this.meshA.add(this.mesh);
   this.mesh.reseivedShadow = true;
   this.mesh.rotation.x = -90 * Math.PI / 180;
 }
