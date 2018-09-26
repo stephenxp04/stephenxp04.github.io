@@ -9,11 +9,16 @@ function init() {
   createOcean();
   animation();
 }
+
+var colors = [0xDE5006, 0x42447, 0xC0A468, 0xF38D58, 0x615173];
+
 var Theme = {
   //_dark:0xFFFFFF,
-  _dark:0xF0F0F0,   // Background
-  _cont:0xFFD3D3,   // Lines
-  _blue:0x83CFF4,
+  _black:0x101010,
+  _dark:0x0F0F0F,   // Background
+//   _cont:0xFFD3D3,   // Lines
+  _cont:0xF00000,
+  _blue:0x83CFF,
   _red:0xF00000,      //
   _cyan:0x00FFFF,   // Material
   _white:0x00B0EB  // Lights
@@ -71,10 +76,18 @@ function createLights() {
 }
 //--------------------------------------------------------------------
 boatElement = function() {
-  var boatGeo = new THREE.CubeGeometry();
-  var boatMat = new THREE.MeshStandardMaterial({color:Theme._blue});
-  this.boat = new THREE.Object3D();
-  this.boat = new THREE.Mesh(boatGeo, boatMat);
+//   var boatGeo = new THREE.CubeGeometry();
+//   var boatMat = new THREE.MeshStandardMaterial({color:Theme._blue});
+//   this.boat = new THREE.Object3D();
+//   this.boat = new THREE.Mesh(boatGeo, boatMat);
+  var boatGeo = new THREE.IcosahedronGeometry();
+  var boatMat = new THREE.MeshPhongMaterial( { 
+      color: Theme._cyan, 
+      wireframe: true, 
+      wireframeLinewidth: 50 } 
+  );
+
+  this.boat = new THREE.Mesh( boatGeo, boatMat );
   this.boat.castShadow = true;
   this.boat.vel = 1+Math.random()*4;
   this.boat.amp = 1+Math.random()*6;
@@ -87,10 +100,13 @@ boatElement.prototype.movePosition = function(moveValue = 1) {
   this.boat.rotation.y = (Math.random()*360) * Math.PI / 180;
 }
 boatElement.prototype.sizeElement = function(sizeValue = 1) {
-  this.boat.scale.z = this.boat.scale.x = Math.random() * sizeValue;
-  this.boat.scale.y = 0.5+ Math.random() * (sizeValue);
+//   this.boat.scale.z = this.boat.scale.x = Math.random() * sizeValue;
+//   this.boat.scale.y = 0.5+ Math.random() * (sizeValue);
+
+  this.boat.scale.z = this.boat.scale.y = this.boat.scale.x = Math.random() * sizeValue;
+//   this.boat.scale.y = 0.5+ Math.random() * (sizeValue);
 }
-function createBoat(boatValue = 5) {
+function createBoat(boatValue = 10) {
   for (var i = 0; i<boatValue; i++){
     var _boatElementItem = new boatElement();
     _boatElementItem.movePosition(5);

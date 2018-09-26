@@ -6,8 +6,10 @@
 
 body {
   font-family: 'Muli', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  padding-top: 54px;
-  color: black;
+  
+  color:white;
+  text-shadow: 1px 1px 0px black; 
+  /* text-shadow: #CCC 1px 0 10px;  */
 }
 
 /* body{
@@ -58,7 +60,7 @@ h6 {
   font-family: 'Saira Extra Condensed', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   font-weight: 700;
   text-transform: uppercase;
-  color: #343a40;
+  color: whitesmoke;
 }
 
 h1 {
@@ -68,6 +70,7 @@ h1 {
 
 h2 {
   font-size: 3.5rem;
+  color: #ff6600;
 }
 
 h3 {
@@ -90,7 +93,7 @@ p.lead {
   display: inline-block;
   height: 3.5rem;
   width: 3.5rem;
-  background-color: #495057;
+  background-color: #ff6600;
   color: #fff !important;
   border-radius: 100%;
   text-align: center;
@@ -112,7 +115,7 @@ p.lead {
 }
 
 .dev-icons .list-inline-item i:hover {
-  color: #BD5D38;
+  color: #ff6600;
 }
 
 #sideNav .navbar-nav .nav-item .nav-link {
@@ -122,7 +125,7 @@ p.lead {
 }
 
 #sideNav .navbar-toggler:focus {
-  outline-color: #d48a6e;
+  outline-color: #ff6600;
 }
 
 @media (min-width: 992px) {
@@ -150,23 +153,25 @@ p.lead {
   }
   #sideNav .navbar-brand .img-profile {
     transform: rotate(-90deg);
-    max-width: 12rem;
-    max-height: 12rem;
+    max-width: 10rem;
+    max-height: 10rem;
+    border-radius: 2%;
     /* border: 0.5rem solid rgba(255, 255, 255, 0.2); */
     animation: breathe 6s linear infinite
   }
 
   @keyframes breathe {
     0%{
-      box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 5px 5px rgba(60, 60, 60, 0.2);
     }
     50%{
-      box-shadow: 0 0 15px 15px rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 15px 15px rgba(60, 60, 60, 0.2);
     }
     100%{
-      box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 5px 5px rgba(60, 60, 60, 0.2);
     }
   }
+
   #sideNav .navbar-collapse {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -222,22 +227,28 @@ section.resume-section .resume-item .resume-date {
 }
 
 .bg-primary {
-  background-color: rgba(255, 255, 255, 0.5) !important;
-  /* background-color: #BD5D38 !important; */
-  /* background: #2980b9 url('https://static.tumblr.com/03fbbc566b081016810402488936fbae/pqpk3dn/MRSmlzpj3/tumblr_static_bg3.png') repeat 0 0;
-	-webkit-animation: 10s linear 0s normal none infinite animate;
-	-moz-animation: 10s linear 0s normal none infinite animate;
-	-ms-animation: 10s linear 0s normal none infinite animate;
-	-o-animation: 10s linear 0s normal none infinite animate;
-	animation: 10s linear 0s normal none infinite animate; */
+  /* background-color: rgb(255, 165, 30) !important; */
+  background: #f07707 url('https://static.tumblr.com/03fbbc566b081016810402488936fbae/pqpk3dn/MRSmlzpj3/tumblr_static_bg3.png') repeat 0 0;
+    -webkit-animation: 20s linear 0s normal none infinite animate;
+    -moz-animation: 20s linear 0s normal none infinite animate;
+    -ms-animation: 20s linear 0s normal none infinite animate;
+    -o-animation: 20s linear 0s normal none infinite animate;
+    animation: 20s linear 0s normal none infinite animate;
+}
+
+@media (min-width: 992px) {
+  .bg-primary {
+    background: transparent;
+    background-color: rgba(50, 50, 50, 0.1) !important;
+  }
 }
 
 .text-primary {
-  color: #BD5D38 !important;
+  color: #ff6600 !important;
 }
 
 a {
-  color: #BD5D38;
+  color: #ff6600;
 }
 
 a:hover, a:focus, a:active {
