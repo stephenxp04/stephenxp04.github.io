@@ -7,7 +7,7 @@
 body {
   font-family: 'Muli', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   padding-top: 54px;
-  color: #868e96;
+  color: black;
 }
 
 /* body{
@@ -149,9 +149,23 @@ p.lead {
     padding: 0.5rem;
   }
   #sideNav .navbar-brand .img-profile {
-    max-width: 10rem;
-    max-height: 10rem;
-    border: 0.5rem solid rgba(255, 255, 255, 0.2);
+    transform: rotate(-90deg);
+    max-width: 12rem;
+    max-height: 12rem;
+    /* border: 0.5rem solid rgba(255, 255, 255, 0.2); */
+    animation: breathe 6s linear infinite
+  }
+
+  @keyframes breathe {
+    0%{
+      box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.2);
+    }
+    50%{
+      box-shadow: 0 0 15px 15px rgba(255, 255, 255, 0.2);
+    }
+    100%{
+      box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.2);
+    }
   }
   #sideNav .navbar-collapse {
     display: -webkit-box;
@@ -208,13 +222,14 @@ section.resume-section .resume-item .resume-date {
 }
 
 .bg-primary {
+  background-color: rgba(255, 255, 255, 0.5) !important;
   /* background-color: #BD5D38 !important; */
-  background: #2980b9 url('https://static.tumblr.com/03fbbc566b081016810402488936fbae/pqpk3dn/MRSmlzpj3/tumblr_static_bg3.png') repeat 0 0;
+  /* background: #2980b9 url('https://static.tumblr.com/03fbbc566b081016810402488936fbae/pqpk3dn/MRSmlzpj3/tumblr_static_bg3.png') repeat 0 0;
 	-webkit-animation: 10s linear 0s normal none infinite animate;
 	-moz-animation: 10s linear 0s normal none infinite animate;
 	-ms-animation: 10s linear 0s normal none infinite animate;
 	-o-animation: 10s linear 0s normal none infinite animate;
-	animation: 10s linear 0s normal none infinite animate;
+	animation: 10s linear 0s normal none infinite animate; */
 }
 
 .text-primary {
@@ -227,4 +242,14 @@ a {
 
 a:hover, a:focus, a:active {
   color: #824027;
+}
+
+canvas {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -9999;
 }
