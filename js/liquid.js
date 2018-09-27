@@ -5,7 +5,7 @@ function init() {
   createWorld();
   createLights();
   createBoat();
-  createGrid();
+  // createGrid();
   createOcean();
   animation();
 }
@@ -14,14 +14,15 @@ var colors = [0xDE5006, 0x42447, 0xC0A468, 0xF38D58, 0x615173];
 
 var Theme = {
   // _dark:0xFFFFFF,
-  _black:0x101010,
-  _dark:0x0F0F0F,   // Background
+  _black:0x0A0A0A,
+  _dark:0x202020,   // Background
 //   _cont:0xFFD3D3,   // Lines
   _cont:0xF00000,
   _blue:0x83CFF,
   _red:0xF00000,      //
   _cyan:0x00FFFF,   // Material
-  _white:0x00B0EB  // Lights
+  _white:0x00B0EB,  // Lights
+  _purple: 0xFF00FF
 }
 var scene, camera, renderer, container;
 var _width, _height;
