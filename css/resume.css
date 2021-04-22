@@ -128,6 +128,12 @@ p.lead {
   outline-color: #ff6600;
 }
 
+@media(max-width: 992px) {
+  iframe {
+    min-height: 75vh;
+  }
+}
+
 @media (min-width: 992px) {
   #sideNav {
     text-align: center;
