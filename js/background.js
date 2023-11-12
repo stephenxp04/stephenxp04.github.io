@@ -1,6 +1,6 @@
 var container;
 
-var colors = [0xDE5006, 0x42447, 0xC0A468, 0xF38D58, 0x615173];
+var colors = [0xDE5006, 0x4244a7, 0xC0A468, 0xF38D58, 0x615173];
 
 var camera, scene, renderer;
 
@@ -26,7 +26,7 @@ function init() {
 
 	// Ground
 	var groundMaterial = new THREE.MeshPhongMaterial({
-		color: 0x000000
+		color: 0xfff
 	});
 	plane = new THREE.Mesh(new THREE.PlaneGeometry(5000, 5000), groundMaterial);
 	plane.rotation.y = -Math.PI / 2;
@@ -40,7 +40,8 @@ function init() {
 
 	var light;
 
-	light = new THREE.DirectionalLight(0xdfebff, 1.75);
+	light = new THREE.DirectionalLight(0x000, 1.75);
+	// light = new THREE.DirectionalLight(0xdfebff, 1.75);
 	light.position.set(-1000, 0, 0);
 	light.position.multiplyScalar(1.3);
 

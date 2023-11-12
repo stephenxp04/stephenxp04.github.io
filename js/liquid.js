@@ -10,7 +10,7 @@ function init() {
   animation();
 }
 
-var colors = [0xDE5006, 0x42447, 0xC0A468, 0xF38D58, 0x615173];
+var colors = [0xDE5006, 0x4244a7, 0xC0A468, 0xF38D58, 0x615173];
 
 var Theme = {
   // _dark:0xFFFFFF,
@@ -35,8 +35,8 @@ function createWorld() {
   _height= window.innerHeight;
   //---
   scene = new THREE.Scene();
-  scene.fog = new THREE.Fog(Theme._dark, 5, 20);
-  scene.background = new THREE.Color(Theme._dark);
+  scene.fog = new THREE.Fog(Theme._white, 5, 20);
+  scene.background = new THREE.Color(Theme._white);
   //---
   camera = new THREE.PerspectiveCamera(20, _width/_height, 1, 1000);
   camera.position.set(0,2,10);
@@ -83,7 +83,7 @@ boatElement = function() {
 //   this.boat = new THREE.Mesh(boatGeo, boatMat);
   var boatGeo = new THREE.IcosahedronGeometry();
   var boatMat = new THREE.MeshPhongMaterial( { 
-      color: Theme._cyan, 
+      color: Theme._white, 
       wireframe: true, 
       wireframeLinewidth: 3 } 
   );
@@ -114,7 +114,7 @@ function createBoat(boatValue = 10) {
     _boatElementItem.sizeElement();
     _boatGroup.add(_boatElementItem.boat);
   };
-  scene.add(_boatGroup);
+  // scene.add(_boatGroup);
   console.log('Hello Boat');
 }
 oceanElement = function(wirefr = true, geo_frag = 25) {
@@ -133,11 +133,11 @@ oceanElement = function(wirefr = true, geo_frag = 25) {
       z:v.z,
       ang:Math.PI*2,
       amp:Math.random()*(0.2),
-      speed:0.03+Math.random()*0.05
+      speed:0.03+Math.random()*0.01
     });
   };
   var wmat = new THREE.MeshPhysicalMaterial({color:Theme._white, wireframe:true, transparent:false, opacity:1 });
-  var mat = new THREE.MeshPhysicalMaterial({color:Theme._white, transparent:true, opacity:0.85, wireframe:false});
+  var mat = new THREE.MeshPhysicalMaterial({color:Theme._white, transparent:true, opacity:1, wireframe:false});
   this.wire = new THREE.Mesh(geo, wmat);
   this.mesh = new THREE.Mesh(geo, mat);
   if (wirefr) this.mesh.add(this.wire);
