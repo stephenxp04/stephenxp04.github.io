@@ -17,7 +17,7 @@ body {
     "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol", "Noto Color Emoji"; */
   color: white;
-  background: #444;
+  background: black;
   text-shadow: 1px 1px 0px black;
   /* text-shadow: #CCC 1px 0 10px;  */
 }
